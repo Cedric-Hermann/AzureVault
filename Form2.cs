@@ -22,7 +22,7 @@ namespace AzureVault
 
         public void loadForm(object form)
         {
-            if(this.panelForm2Main.Controls.Count > 0)
+            if (this.panelForm2Main.Controls.Count > 0)
             {
                 this.panelForm2Main.Controls.RemoveAt(0);
             }
@@ -41,6 +41,21 @@ namespace AzureVault
         private void picForm2Minimize_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void btnForm2OpenFormEinstellungen_Click(object sender, EventArgs e)
+        {
+            loadForm(new Einstellungen());
+        }
+
+        private void btnForm2OpenFormPasswortgenerator_Click(object sender, EventArgs e)
+        {
+            loadForm(new Passwortgenerator());
+        }
+
+        private void btnForm2OpenFormZugangsdaten_Click(object sender, EventArgs e)
+        {
+            loadForm(new Zugangsdaten());
         }
     }
 }
