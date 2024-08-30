@@ -39,6 +39,8 @@
             lblForm1StandardPasswortText = new Label();
             picForm1ShowPasswortSymbol = new PictureBox();
             picForm1HidePasswortSymbol = new PictureBox();
+            lblForm1PasswortEingabeFeldLeerError = new Label();
+            lblForm1MasterPasswortEingabeFalschError = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBoxForm1Logo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picForm1KeySymbol).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picForm1ShowPasswortSymbol).BeginInit();
@@ -91,6 +93,7 @@
             btnForm1LogIn.TabIndex = 4;
             btnForm1LogIn.Text = "LOG IN";
             btnForm1LogIn.UseVisualStyleBackColor = false;
+            btnForm1LogIn.Click += btnForm1LogIn_Click;
             // 
             // lblForm1TextBoxLeeren
             // 
@@ -172,12 +175,40 @@
             picForm1HidePasswortSymbol.Visible = false;
             picForm1HidePasswortSymbol.Click += picForm1HidePasswortSymbol_Click;
             // 
+            // lblForm1PasswortEingabeFeldLeerError
+            // 
+            lblForm1PasswortEingabeFeldLeerError.BackColor = Color.Transparent;
+            lblForm1PasswortEingabeFeldLeerError.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
+            lblForm1PasswortEingabeFeldLeerError.ForeColor = Color.Red;
+            lblForm1PasswortEingabeFeldLeerError.Location = new Point(21, 347);
+            lblForm1PasswortEingabeFeldLeerError.Name = "lblForm1PasswortEingabeFeldLeerError";
+            lblForm1PasswortEingabeFeldLeerError.Size = new Size(241, 23);
+            lblForm1PasswortEingabeFeldLeerError.TabIndex = 11;
+            lblForm1PasswortEingabeFeldLeerError.Text = "Feld darf nicht leer sein!";
+            lblForm1PasswortEingabeFeldLeerError.TextAlign = ContentAlignment.MiddleCenter;
+            lblForm1PasswortEingabeFeldLeerError.Visible = false;
+            // 
+            // lblForm1MasterPasswortEingabeFalschError
+            // 
+            lblForm1MasterPasswortEingabeFalschError.BackColor = Color.Transparent;
+            lblForm1MasterPasswortEingabeFalschError.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
+            lblForm1MasterPasswortEingabeFalschError.ForeColor = Color.Red;
+            lblForm1MasterPasswortEingabeFalschError.Location = new Point(21, 347);
+            lblForm1MasterPasswortEingabeFalschError.Name = "lblForm1MasterPasswortEingabeFalschError";
+            lblForm1MasterPasswortEingabeFalschError.Size = new Size(236, 23);
+            lblForm1MasterPasswortEingabeFalschError.TabIndex = 12;
+            lblForm1MasterPasswortEingabeFalschError.Text = "Master-Passwort falsch!";
+            lblForm1MasterPasswortEingabeFalschError.TextAlign = ContentAlignment.MiddleCenter;
+            lblForm1MasterPasswortEingabeFalschError.Visible = false;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(292, 447);
+            Controls.Add(lblForm1MasterPasswortEingabeFalschError);
+            Controls.Add(lblForm1PasswortEingabeFeldLeerError);
             Controls.Add(picForm1HidePasswortSymbol);
             Controls.Add(picForm1ShowPasswortSymbol);
             Controls.Add(lblForm1StandardPasswortText);
@@ -193,6 +224,7 @@
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
+            Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBoxForm1Logo).EndInit();
             ((System.ComponentModel.ISupportInitialize)picForm1KeySymbol).EndInit();
             ((System.ComponentModel.ISupportInitialize)picForm1ShowPasswortSymbol).EndInit();
@@ -214,5 +246,7 @@
         private Label lblForm1StandardPasswortText;
         private PictureBox picForm1ShowPasswortSymbol;
         private PictureBox picForm1HidePasswortSymbol;
+        private Label lblForm1PasswortEingabeFeldLeerError;
+        private Label lblForm1MasterPasswortEingabeFalschError;
     }
 }
