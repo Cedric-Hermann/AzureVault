@@ -50,7 +50,7 @@ namespace AzureVault
 
         private void btnForm1LogIn_Click(object sender, EventArgs e)
         {
-            string masterSaveNameOrLocation = "mSafe.txt";
+            string masterSaveNameOrLocation = "mSave.txt";
             string standardMasterPasswort = "admin";
             string mPassKey = "e546c8df278cd5931069b522e6953332";
             ///Verschlüsslungskey ist offen im Code einsehbar -> weniger sicher, eventuell bessere Methode finden
