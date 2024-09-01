@@ -47,9 +47,23 @@
             lblFormEinstellungenNewMasterPasswortNotMatchingError = new Label();
             lblFormEinstellungenMasterPasswortChangedSchriftzug = new Label();
             panelFormEinstellungenErsteTrennLinie = new Panel();
+            lblFormEinstellungenZugangsdatenPasswortGenSchriftzug = new Label();
+            chkFormEinstellungenGrossbuchstabenOption = new CheckBox();
+            chkFormEinstellungenKleinbuchstabenOption = new CheckBox();
+            chkFormEinstellungenZahlenOption = new CheckBox();
+            chkFormEinstellungenSonderzeichenOption = new CheckBox();
+            chkFormEinstellungenKeineDopplungenOption = new CheckBox();
+            lblFormEinstellungenPasswortLaengeSchriftzug = new Label();
+            trackFormEinstellungenPasswortLaenge = new TrackBar();
+            lblFormEinstellungenChosenPasswortLaenge = new Label();
+            lblFormEinstellungenPasswortGeneratorSavesChangedSchriftzug = new Label();
+            lblFormEinstellungenKeineBedingungenError = new Label();
+            btnFormEinstellungenPasswortGeneratorSaveChanges = new Button();
+            lblFormEinstellungenMinimalePasswortLaengeSchriftzug = new Label();
             ((System.ComponentModel.ISupportInitialize)picFormEinstellungenPasswortKeySymbol).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picFormEinstellungenPasswortBearbeitenSymbol1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picFormEinstellungenPasswortBearbeitenSymbol2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)trackFormEinstellungenPasswortLaenge).BeginInit();
             SuspendLayout();
             // 
             // lblFormEinstellungenEinstellungenSchriftzug
@@ -280,12 +294,186 @@
             panelFormEinstellungenErsteTrennLinie.Size = new Size(529, 1);
             panelFormEinstellungenErsteTrennLinie.TabIndex = 5;
             // 
+            // lblFormEinstellungenZugangsdatenPasswortGenSchriftzug
+            // 
+            lblFormEinstellungenZugangsdatenPasswortGenSchriftzug.BackColor = Color.Transparent;
+            lblFormEinstellungenZugangsdatenPasswortGenSchriftzug.Font = new Font("Bahnschrift SemiBold", 14.25F, FontStyle.Bold);
+            lblFormEinstellungenZugangsdatenPasswortGenSchriftzug.ForeColor = Color.FromArgb(0, 117, 214);
+            lblFormEinstellungenZugangsdatenPasswortGenSchriftzug.ImageAlign = ContentAlignment.MiddleLeft;
+            lblFormEinstellungenZugangsdatenPasswortGenSchriftzug.Location = new Point(12, 237);
+            lblFormEinstellungenZugangsdatenPasswortGenSchriftzug.Name = "lblFormEinstellungenZugangsdatenPasswortGenSchriftzug";
+            lblFormEinstellungenZugangsdatenPasswortGenSchriftzug.Size = new Size(316, 28);
+            lblFormEinstellungenZugangsdatenPasswortGenSchriftzug.TabIndex = 36;
+            lblFormEinstellungenZugangsdatenPasswortGenSchriftzug.Text = "Zugangsdaten - Passwortgenerator";
+            lblFormEinstellungenZugangsdatenPasswortGenSchriftzug.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // chkFormEinstellungenGrossbuchstabenOption
+            // 
+            chkFormEinstellungenGrossbuchstabenOption.Font = new Font("Bahnschrift Condensed", 12F);
+            chkFormEinstellungenGrossbuchstabenOption.ForeColor = Color.FromArgb(0, 117, 214);
+            chkFormEinstellungenGrossbuchstabenOption.Location = new Point(12, 263);
+            chkFormEinstellungenGrossbuchstabenOption.Name = "chkFormEinstellungenGrossbuchstabenOption";
+            chkFormEinstellungenGrossbuchstabenOption.Size = new Size(124, 24);
+            chkFormEinstellungenGrossbuchstabenOption.TabIndex = 37;
+            chkFormEinstellungenGrossbuchstabenOption.Text = "Großbuchstaben";
+            chkFormEinstellungenGrossbuchstabenOption.UseVisualStyleBackColor = true;
+            // 
+            // chkFormEinstellungenKleinbuchstabenOption
+            // 
+            chkFormEinstellungenKleinbuchstabenOption.Font = new Font("Bahnschrift Condensed", 12F);
+            chkFormEinstellungenKleinbuchstabenOption.ForeColor = Color.FromArgb(0, 117, 214);
+            chkFormEinstellungenKleinbuchstabenOption.Location = new Point(12, 284);
+            chkFormEinstellungenKleinbuchstabenOption.Name = "chkFormEinstellungenKleinbuchstabenOption";
+            chkFormEinstellungenKleinbuchstabenOption.Size = new Size(124, 24);
+            chkFormEinstellungenKleinbuchstabenOption.TabIndex = 38;
+            chkFormEinstellungenKleinbuchstabenOption.Text = "Kleinbuchstaben";
+            chkFormEinstellungenKleinbuchstabenOption.UseVisualStyleBackColor = true;
+            // 
+            // chkFormEinstellungenZahlenOption
+            // 
+            chkFormEinstellungenZahlenOption.Font = new Font("Bahnschrift Condensed", 12F);
+            chkFormEinstellungenZahlenOption.ForeColor = Color.FromArgb(0, 117, 214);
+            chkFormEinstellungenZahlenOption.Location = new Point(12, 305);
+            chkFormEinstellungenZahlenOption.Name = "chkFormEinstellungenZahlenOption";
+            chkFormEinstellungenZahlenOption.Size = new Size(124, 24);
+            chkFormEinstellungenZahlenOption.TabIndex = 39;
+            chkFormEinstellungenZahlenOption.Text = "Zahlen";
+            chkFormEinstellungenZahlenOption.UseVisualStyleBackColor = true;
+            // 
+            // chkFormEinstellungenSonderzeichenOption
+            // 
+            chkFormEinstellungenSonderzeichenOption.Font = new Font("Bahnschrift Condensed", 12F);
+            chkFormEinstellungenSonderzeichenOption.ForeColor = Color.FromArgb(0, 117, 214);
+            chkFormEinstellungenSonderzeichenOption.Location = new Point(12, 326);
+            chkFormEinstellungenSonderzeichenOption.Name = "chkFormEinstellungenSonderzeichenOption";
+            chkFormEinstellungenSonderzeichenOption.Size = new Size(124, 24);
+            chkFormEinstellungenSonderzeichenOption.TabIndex = 40;
+            chkFormEinstellungenSonderzeichenOption.Text = "Sonderzeichen";
+            chkFormEinstellungenSonderzeichenOption.UseVisualStyleBackColor = true;
+            // 
+            // chkFormEinstellungenKeineDopplungenOption
+            // 
+            chkFormEinstellungenKeineDopplungenOption.Font = new Font("Bahnschrift Condensed", 12F);
+            chkFormEinstellungenKeineDopplungenOption.ForeColor = Color.FromArgb(0, 117, 214);
+            chkFormEinstellungenKeineDopplungenOption.Location = new Point(12, 347);
+            chkFormEinstellungenKeineDopplungenOption.Name = "chkFormEinstellungenKeineDopplungenOption";
+            chkFormEinstellungenKeineDopplungenOption.Size = new Size(124, 24);
+            chkFormEinstellungenKeineDopplungenOption.TabIndex = 41;
+            chkFormEinstellungenKeineDopplungenOption.Text = "Keine Dopplungen";
+            chkFormEinstellungenKeineDopplungenOption.UseVisualStyleBackColor = true;
+            // 
+            // lblFormEinstellungenPasswortLaengeSchriftzug
+            // 
+            lblFormEinstellungenPasswortLaengeSchriftzug.BackColor = Color.Transparent;
+            lblFormEinstellungenPasswortLaengeSchriftzug.Font = new Font("Bahnschrift Condensed", 12F);
+            lblFormEinstellungenPasswortLaengeSchriftzug.ForeColor = Color.FromArgb(0, 117, 214);
+            lblFormEinstellungenPasswortLaengeSchriftzug.ImageAlign = ContentAlignment.MiddleLeft;
+            lblFormEinstellungenPasswortLaengeSchriftzug.Location = new Point(12, 374);
+            lblFormEinstellungenPasswortLaengeSchriftzug.Name = "lblFormEinstellungenPasswortLaengeSchriftzug";
+            lblFormEinstellungenPasswortLaengeSchriftzug.Size = new Size(100, 23);
+            lblFormEinstellungenPasswortLaengeSchriftzug.TabIndex = 42;
+            lblFormEinstellungenPasswortLaengeSchriftzug.Text = "Passwortlänge:";
+            lblFormEinstellungenPasswortLaengeSchriftzug.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // trackFormEinstellungenPasswortLaenge
+            // 
+            trackFormEinstellungenPasswortLaenge.AutoSize = false;
+            trackFormEinstellungenPasswortLaenge.LargeChange = 1;
+            trackFormEinstellungenPasswortLaenge.Location = new Point(118, 368);
+            trackFormEinstellungenPasswortLaenge.Maximum = 35;
+            trackFormEinstellungenPasswortLaenge.Minimum = 5;
+            trackFormEinstellungenPasswortLaenge.Name = "trackFormEinstellungenPasswortLaenge";
+            trackFormEinstellungenPasswortLaenge.Size = new Size(209, 40);
+            trackFormEinstellungenPasswortLaenge.TabIndex = 44;
+            trackFormEinstellungenPasswortLaenge.Value = 5;
+            trackFormEinstellungenPasswortLaenge.ValueChanged += trackFormEinstellungenPasswortLaengeValue_Changed;
+            // 
+            // lblFormEinstellungenChosenPasswortLaenge
+            // 
+            lblFormEinstellungenChosenPasswortLaenge.BackColor = Color.Transparent;
+            lblFormEinstellungenChosenPasswortLaenge.Font = new Font("Bahnschrift Condensed", 12F);
+            lblFormEinstellungenChosenPasswortLaenge.ForeColor = Color.FromArgb(0, 117, 214);
+            lblFormEinstellungenChosenPasswortLaenge.ImageAlign = ContentAlignment.MiddleLeft;
+            lblFormEinstellungenChosenPasswortLaenge.Location = new Point(333, 372);
+            lblFormEinstellungenChosenPasswortLaenge.Name = "lblFormEinstellungenChosenPasswortLaenge";
+            lblFormEinstellungenChosenPasswortLaenge.Size = new Size(26, 23);
+            lblFormEinstellungenChosenPasswortLaenge.TabIndex = 45;
+            lblFormEinstellungenChosenPasswortLaenge.Text = "5";
+            lblFormEinstellungenChosenPasswortLaenge.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // lblFormEinstellungenPasswortGeneratorSavesChangedSchriftzug
+            // 
+            lblFormEinstellungenPasswortGeneratorSavesChangedSchriftzug.BackColor = Color.Transparent;
+            lblFormEinstellungenPasswortGeneratorSavesChangedSchriftzug.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
+            lblFormEinstellungenPasswortGeneratorSavesChangedSchriftzug.ForeColor = Color.MediumSeaGreen;
+            lblFormEinstellungenPasswortGeneratorSavesChangedSchriftzug.ImageAlign = ContentAlignment.MiddleLeft;
+            lblFormEinstellungenPasswortGeneratorSavesChangedSchriftzug.Location = new Point(365, 347);
+            lblFormEinstellungenPasswortGeneratorSavesChangedSchriftzug.Name = "lblFormEinstellungenPasswortGeneratorSavesChangedSchriftzug";
+            lblFormEinstellungenPasswortGeneratorSavesChangedSchriftzug.Size = new Size(176, 23);
+            lblFormEinstellungenPasswortGeneratorSavesChangedSchriftzug.TabIndex = 46;
+            lblFormEinstellungenPasswortGeneratorSavesChangedSchriftzug.Text = "Änderungen gespeichert!";
+            lblFormEinstellungenPasswortGeneratorSavesChangedSchriftzug.TextAlign = ContentAlignment.MiddleCenter;
+            lblFormEinstellungenPasswortGeneratorSavesChangedSchriftzug.Visible = false;
+            // 
+            // lblFormEinstellungenKeineBedingungenError
+            // 
+            lblFormEinstellungenKeineBedingungenError.BackColor = Color.Transparent;
+            lblFormEinstellungenKeineBedingungenError.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
+            lblFormEinstellungenKeineBedingungenError.ForeColor = Color.Red;
+            lblFormEinstellungenKeineBedingungenError.ImageAlign = ContentAlignment.MiddleLeft;
+            lblFormEinstellungenKeineBedingungenError.Location = new Point(365, 347);
+            lblFormEinstellungenKeineBedingungenError.Name = "lblFormEinstellungenKeineBedingungenError";
+            lblFormEinstellungenKeineBedingungenError.Size = new Size(176, 23);
+            lblFormEinstellungenKeineBedingungenError.TabIndex = 47;
+            lblFormEinstellungenKeineBedingungenError.Text = "Keine Bedingung gewählt!";
+            lblFormEinstellungenKeineBedingungenError.TextAlign = ContentAlignment.MiddleCenter;
+            lblFormEinstellungenKeineBedingungenError.Visible = false;
+            // 
+            // btnFormEinstellungenPasswortGeneratorSaveChanges
+            // 
+            btnFormEinstellungenPasswortGeneratorSaveChanges.BackColor = Color.Transparent;
+            btnFormEinstellungenPasswortGeneratorSaveChanges.FlatStyle = FlatStyle.Flat;
+            btnFormEinstellungenPasswortGeneratorSaveChanges.Font = new Font("Bauhaus 93", 14.25F);
+            btnFormEinstellungenPasswortGeneratorSaveChanges.ForeColor = Color.FromArgb(0, 117, 214);
+            btnFormEinstellungenPasswortGeneratorSaveChanges.Location = new Point(365, 375);
+            btnFormEinstellungenPasswortGeneratorSaveChanges.Name = "btnFormEinstellungenPasswortGeneratorSaveChanges";
+            btnFormEinstellungenPasswortGeneratorSaveChanges.Size = new Size(176, 33);
+            btnFormEinstellungenPasswortGeneratorSaveChanges.TabIndex = 48;
+            btnFormEinstellungenPasswortGeneratorSaveChanges.Text = "Speichern";
+            btnFormEinstellungenPasswortGeneratorSaveChanges.UseVisualStyleBackColor = false;
+            btnFormEinstellungenPasswortGeneratorSaveChanges.Click += btnFormEinstellungenPasswortGeneratorSaveChanges_Click;
+            // 
+            // lblFormEinstellungenMinimalePasswortLaengeSchriftzug
+            // 
+            lblFormEinstellungenMinimalePasswortLaengeSchriftzug.BackColor = Color.Transparent;
+            lblFormEinstellungenMinimalePasswortLaengeSchriftzug.Font = new Font("Bahnschrift Condensed", 9.75F);
+            lblFormEinstellungenMinimalePasswortLaengeSchriftzug.ForeColor = Color.FromArgb(0, 117, 214);
+            lblFormEinstellungenMinimalePasswortLaengeSchriftzug.ImageAlign = ContentAlignment.MiddleLeft;
+            lblFormEinstellungenMinimalePasswortLaengeSchriftzug.Location = new Point(149, 401);
+            lblFormEinstellungenMinimalePasswortLaengeSchriftzug.Name = "lblFormEinstellungenMinimalePasswortLaengeSchriftzug";
+            lblFormEinstellungenMinimalePasswortLaengeSchriftzug.Size = new Size(152, 19);
+            lblFormEinstellungenMinimalePasswortLaengeSchriftzug.TabIndex = 49;
+            lblFormEinstellungenMinimalePasswortLaengeSchriftzug.Text = "Minimale Passwortlänge: 5";
+            // 
             // Einstellungen
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(553, 420);
+            Controls.Add(lblFormEinstellungenMinimalePasswortLaengeSchriftzug);
+            Controls.Add(btnFormEinstellungenPasswortGeneratorSaveChanges);
+            Controls.Add(lblFormEinstellungenKeineBedingungenError);
+            Controls.Add(lblFormEinstellungenPasswortGeneratorSavesChangedSchriftzug);
+            Controls.Add(lblFormEinstellungenChosenPasswortLaenge);
+            Controls.Add(trackFormEinstellungenPasswortLaenge);
+            Controls.Add(lblFormEinstellungenPasswortLaengeSchriftzug);
+            Controls.Add(chkFormEinstellungenKeineDopplungenOption);
+            Controls.Add(chkFormEinstellungenSonderzeichenOption);
+            Controls.Add(chkFormEinstellungenZahlenOption);
+            Controls.Add(chkFormEinstellungenKleinbuchstabenOption);
+            Controls.Add(chkFormEinstellungenGrossbuchstabenOption);
+            Controls.Add(lblFormEinstellungenZugangsdatenPasswortGenSchriftzug);
             Controls.Add(panelFormEinstellungenErsteTrennLinie);
             Controls.Add(lblFormEinstellungenMasterPasswortChangedSchriftzug);
             Controls.Add(lblFormEinstellungenNewMasterPasswortNotMatchingError);
@@ -311,6 +499,7 @@
             ((System.ComponentModel.ISupportInitialize)picFormEinstellungenPasswortKeySymbol).EndInit();
             ((System.ComponentModel.ISupportInitialize)picFormEinstellungenPasswortBearbeitenSymbol1).EndInit();
             ((System.ComponentModel.ISupportInitialize)picFormEinstellungenPasswortBearbeitenSymbol2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)trackFormEinstellungenPasswortLaenge).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -336,5 +525,18 @@
         private Label lblFormEinstellungenNewMasterPasswortNotMatchingError;
         private Label lblFormEinstellungenMasterPasswortChangedSchriftzug;
         private Panel panelFormEinstellungenErsteTrennLinie;
+        private Label lblFormEinstellungenZugangsdatenPasswortGenSchriftzug;
+        private CheckBox chkFormEinstellungenGrossbuchstabenOption;
+        private CheckBox chkFormEinstellungenKleinbuchstabenOption;
+        private CheckBox chkFormEinstellungenZahlenOption;
+        private CheckBox chkFormEinstellungenSonderzeichenOption;
+        private CheckBox chkFormEinstellungenKeineDopplungenOption;
+        private Label lblFormEinstellungenPasswortLaengeSchriftzug;
+        private TrackBar trackFormEinstellungenPasswortLaenge;
+        private Label lblFormEinstellungenChosenPasswortLaenge;
+        private Label lblFormEinstellungenPasswortGeneratorSavesChangedSchriftzug;
+        private Label lblFormEinstellungenKeineBedingungenError;
+        private Button btnFormEinstellungenPasswortGeneratorSaveChanges;
+        private Label lblFormEinstellungenMinimalePasswortLaengeSchriftzug;
     }
 }
