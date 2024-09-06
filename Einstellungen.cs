@@ -23,8 +23,13 @@ namespace AzureVault
             lblFormEinstellungenAktuellesMasterPasswortFalschError.Visible = false;
             lblFormEinstellungenNewMasterPasswortNotMatchingError.Visible = false;
             lblFormEinstellungenMasterPasswortChangedSchriftzug.Visible = false;
+
+            string idForMasterKey = "keyForMaster";
+
+            string mPassKey = KeyFunktionen.GetCryptionKeys(idForMasterKey);
+
             string masterSaveNameOrLocation = "mSave.txt";
-            string mPassKey = "e546c8df278cd5931069b522e6953332";
+            ///string mPassKey = "e546c8df278cd5931069b522e6953332";
             string masterPasswort = DeAndEncryptionFunktionen.DecryptText(masterSaveNameOrLocation, mPassKey);
             if (txtFormEinstellungenAktuellesMasterPasswortEingabe.Text.Length > 0 && txtFormEinstellungenNewPasswortEingabe.Text.Length > 0 && txtFormEinstellungenConfirmNewPasswortEingabe.Text.Length > 0)
             {
@@ -66,6 +71,15 @@ namespace AzureVault
         {
             lblFormEinstellungenPasswortGeneratorSavesChangedSchriftzug.Visible = false;
             lblFormEinstellungenKeineBedingungenError.Visible = false;
+
+            string idForCharsetKey = "keyForCharset";
+            string idForLaengeKey = "keyForLaenge";
+            string idForDopplungKey = "keyForDopplung";
+
+            ///string charsetKey = "pn6d6v4mr2nc30pvkp8sa7r89g01o2ps";
+            ///string laengeKey = "j30en3rc18knn9nbprbov9od58xwh12q";
+            ///string dopplungenKey = "c3fgo5jsuk2vgh490rrwgcm2g669e7hr";
+
             string charsetFileName = "chaSave.txt";
             string laengeFileName = "laeSave.txt";
             string dopplungFileName = "dupSave.txt";
@@ -100,9 +114,14 @@ namespace AzureVault
                 {
                     lengthchar += "1";
                 }
-                File.WriteAllText(charsetFileName, charset);
-                File.WriteAllText(laengeFileName, lengthchar);
-                File.WriteAllText(dopplungFileName, dopplung);
+                DeAndEncryptionFunktionen.EncryptText(charset, charsetFileName, KeyFunktionen.GetCryptionKeys(idForCharsetKey));
+                DeAndEncryptionFunktionen.EncryptText(lengthchar, laengeFileName, KeyFunktionen.GetCryptionKeys(idForLaengeKey));
+                DeAndEncryptionFunktionen.EncryptText(dopplung, dopplungFileName, KeyFunktionen.GetCryptionKeys(idForDopplungKey));
+
+                ///File.WriteAllText(charsetFileName, charset);
+                ///File.WriteAllText(laengeFileName, lengthchar);
+                ///File.WriteAllText(dopplungFileName, dopplung);
+                
                 lblFormEinstellungenPasswortGeneratorSavesChangedSchriftzug.Visible = true;
                 lblFormEinstellungenKeineBedingungenError.Visible = false;
             }

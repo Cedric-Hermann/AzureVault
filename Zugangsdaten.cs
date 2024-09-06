@@ -93,10 +93,20 @@ namespace AzureVault
 
         private void btnFormZugangsdatenDatenSpeichern_Click(object sender, EventArgs e)
         {
-            string titelKey = "7a573c0747f57a677852cdf78937c7e6";
-            string usernameKey = "b332ed1f8aac7451a5a6e2ec3f8029fa";
-            string passwordKey = "6dcd4ce23d88e2ee95838f7b014b628e";
-            string urlKey = "3fa85f64c2f680956a4f0a2e0a36f5ab";
+            string idForTitelKey = "keyForTitel";
+            string idForUsernameKey = "keyForUsername";
+            string idForPasswortKey = "keyForPasswort";
+            string idForUrlKey = "keyForUrl";
+
+            string titelKey = KeyFunktionen.GetCryptionKeys(idForTitelKey);
+            string usernameKey = KeyFunktionen.GetCryptionKeys(idForUsernameKey);
+            string passwordKey = KeyFunktionen.GetCryptionKeys(idForPasswortKey);
+            string urlKey = KeyFunktionen.GetCryptionKeys(idForUrlKey);
+
+            ///string titelKey = "7a573c0747f57a677852cdf78937c7e6";
+            ///string usernameKey = "b332ed1f8aac7451a5a6e2ec3f8029fa";
+            ///string passwordKey = "6dcd4ce23d88e2ee95838f7b014b628e";
+            ///string urlKey = "3fa85f64c2f680956a4f0a2e0a36f5ab";
             lblFormZugangsdatenDatenGespeichertSchriftzug.Visible = false;
             lblFormZugangsdatenUsernameLeerSchriftzug.Visible = false;
             lblFormZugangsdatenPasswortLeerSchriftzug.Visible = false;
@@ -149,10 +159,20 @@ namespace AzureVault
 
         private void btnFormZugangsdatenDatenLaden_Click(object sender, EventArgs e)
         {
-            string titelKey = "7a573c0747f57a677852cdf78937c7e6";
-            string usernameKey = "b332ed1f8aac7451a5a6e2ec3f8029fa";
-            string passwordKey = "6dcd4ce23d88e2ee95838f7b014b628e";
-            string urlKey = "3fa85f64c2f680956a4f0a2e0a36f5ab";
+            string idForTitelKey = "keyForTitel";
+            string idForUsernameKey = "keyForUsername";
+            string idForPasswortKey = "keyForPasswort";
+            string idForUrlKey = "keyForUrl";
+
+            string titelKey = KeyFunktionen.GetCryptionKeys(idForTitelKey);
+            string usernameKey = KeyFunktionen.GetCryptionKeys(idForUsernameKey);
+            string passwordKey = KeyFunktionen.GetCryptionKeys(idForPasswortKey);
+            string urlKey = KeyFunktionen.GetCryptionKeys(idForUrlKey);
+
+            ///string titelKey = "7a573c0747f57a677852cdf78937c7e6";
+            ///string usernameKey = "b332ed1f8aac7451a5a6e2ec3f8029fa";
+            ///string passwordKey = "6dcd4ce23d88e2ee95838f7b014b628e";
+            ///string urlKey = "3fa85f64c2f680956a4f0a2e0a36f5ab";
             lblFormZugangsdatenDatenGespeichertSchriftzug.Visible = false;
             lblFormZugangsdatenUsernameLeerSchriftzug.Visible = false;
             lblFormZugangsdatenPasswortLeerSchriftzug.Visible = false;
@@ -208,7 +228,7 @@ namespace AzureVault
             string usernameSaveFile = "usSave" + trackFormZugangsdatenChooseATresorNumber.Value.ToString() + ".txt";
             string passwortSaveFile = "pwSave" + trackFormZugangsdatenChooseATresorNumber.Value.ToString() + ".txt";
             string urlSaveFile = "urSave" + trackFormZugangsdatenChooseATresorNumber.Value.ToString() + ".txt";
-            var result = MessageBox.Show("Das löschen der Daten ist permanent. Möschten Sie fortfahren?", "Löschen bestätigen", MessageBoxButtons.YesNo);
+            var result = MessageBox.Show("Das löschen der Daten ist permanent. Möchten Sie fortfahren?", "Löschen bestätigen", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
                 File.Delete(titelSaveFile);
@@ -226,15 +246,27 @@ namespace AzureVault
 
         private void picFormZugangsdatenGeneratePasswort_Click(object sender, EventArgs e)
         {
+            string idForCharsetKey = "keyForCharset";
+            string idForLaengeKey = "keyForLaenge";
+            string idForDopplungKey = "keyForDopplung";
+
+            ///string charsetKey = "pn6d6v4mr2nc30pvkp8sa7r89g01o2ps";
+            ///string laengeKey = "j30en3rc18knn9nbprbov9od58xwh12q";
+            ///string dopplungenKey = "c3fgo5jsuk2vgh490rrwgcm2g669e7hr";
+            
             string charsetSettingsFile = "chaSave.txt";
             string laengeSettingsFile = "laeSave.txt";
             string dopplungenSettingsFile = "dupSave.txt";
 
-            string charset = File.ReadAllText(charsetSettingsFile);
-            string laenge = File.ReadAllText(laengeSettingsFile);
-            string dopplungen = File.ReadAllText(dopplungenSettingsFile);
+            string charset = DeAndEncryptionFunktionen.DecryptText(charsetSettingsFile, KeyFunktionen.GetCryptionKeys(idForCharsetKey));
+            string laenge = DeAndEncryptionFunktionen.DecryptText(laengeSettingsFile, KeyFunktionen.GetCryptionKeys(idForLaengeKey));
+            string dopplungen = DeAndEncryptionFunktionen.DecryptText(dopplungenSettingsFile, KeyFunktionen.GetCryptionKeys(idForDopplungKey));
 
-            if(charset.Length > 0)
+            ///string charset = File.ReadAllText(charsetSettingsFile);
+            ///string laenge = File.ReadAllText(laengeSettingsFile);
+            ///string dopplungen = File.ReadAllText(dopplungenSettingsFile);
+
+            if (charset.Length > 0)
             {
                 Random random = new Random();
                 string generatedPasswort = "";
